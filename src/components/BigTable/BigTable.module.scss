@@ -1,0 +1,276 @@
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. night night morning morning day day evening evening'
+    '. nightTime1 nightTime2 morningTime1 morningTime2 dayTime1 dayTime2 eveningTime1 eveningTime2'
+    '. nightWeather1 nightWeather2 morningWeather1 morningWeather2 dayWeather1 dayWeather2 eveningWeather1 eveningWeather2'
+    'temp nightTemp1 nightTemp2 morningTemp1 morningTemp2 dayTemp1 dayTemp2 eveningTemp1 eveningTemp2'
+    'feelsTemp nightFeelsTemp1 nightFeelsTemp2 morningFeelsTemp1 morningFeelsTemp2 dayFeelsTemp1 dayFeelsTemp2 eveningFeelsTemp1 eveningFeelsTemp2'
+    'pressure nightPressure1 nightPressure2 morningPressure1 morningPressure2 dayPressure1 dayPressure2 eveningPressure1 eveningPressure2'
+    'humidity nightHumidity1 nightHimidity2 morningHumidity1 morningHumidity2 dayHumidity1 dayHumidity2 eveningHumidity1 eveningHumidity2'
+    'wind nightWind1 nightWind2 morningWind1 morningWind2 dayWind1 dayWind2 eveningWind1 eveningWind2';
+}
+
+.wind {
+  grid-area: wind;
+}
+
+.humidity {
+  grid-area: humidity;
+}
+
+.pressure {
+  grid-area: pressure;
+}
+
+.feelsTemp {
+  grid-area: feelsTemp;
+}
+
+.temp {
+  grid-area: temp;
+}
+
+.night {
+  grid-area: night;
+}
+
+.morning {
+  grid-area: morning;
+}
+
+.day {
+  grid-area: day;
+}
+
+.evening {
+  grid-area: evening;
+}
+
+.nightTime1 {
+  grid-area: nightTime1;
+}
+
+.nightTime2 {
+  grid-area: nightTime2;
+}
+
+.morningTime1 {
+  grid-area: morningTime1;
+}
+
+.morningTime2 {
+  grid-area: morningTime2;
+}
+
+.dayTime1 {
+  grid-area: dayTime1;
+}
+
+.dayTime2 {
+  grid-area: dayTime2;
+}
+
+.eveningTime1 {
+  grid-area: eveningTime1;
+}
+
+.eveningTime2 {
+  grid-area: eveningTime2;
+}
+
+.nightWeather1 {
+  grid-area: nightWeather1;
+}
+
+.nightWeather2 {
+  grid-area: nightWeather2;
+}
+
+.morningWeather1 {
+  grid-area: morningWeather1;
+}
+
+.morningWeather2 {
+  grid-area: morningWeather2;
+}
+
+.dayWeather1 {
+  grid-area: dayWeather1;
+}
+
+.dayWeather2 {
+  grid-area: dayWeather2;
+}
+
+.eveningWeather1 {
+  grid-area: eveningWeather1;
+}
+
+.eveningWeather2 {
+  grid-area: eveningWeather2;
+}
+
+.nightTemp1 {
+  grid-area: nightTemp1;
+}
+
+.nightTemp2 {
+  grid-area: nightTemp2;
+}
+
+.morningTemp1 {
+  grid-area: morningTemp1;
+}
+
+.morningTemp2 {
+  grid-area: morningTemp2;
+}
+
+.dayTemp1 {
+  grid-area: dayTemp1;
+}
+
+.dayTemp2 {
+  grid-area: dayTemp2;
+}
+
+.eveningTemp1 {
+  grid-area: eveningTemp1;
+}
+
+.eveningTemp2 {
+  grid-area: eveningTemp2;
+}
+
+.nightFeelsTemp1 {
+  grid-area: nightFeelsTemp1;
+}
+
+.nightFeelsTemp2 {
+  grid-area: nightFeelsTemp2;
+}
+
+.morningFeelsTemp1 {
+  grid-area: morningFeelsTemp1;
+}
+
+.morningFeelsTemp2 {
+  grid-area: morningFeelsTemp2;
+}
+
+.dayFeelsTemp1 {
+  grid-area: dayFeelsTemp1;
+}
+
+.dayFeelsTemp2 {
+  grid-area: dayFeelsTemp2;
+}
+
+.eveningFeelsTemp1 {
+  grid-area: eveningFeelsTemp1;
+}
+
+.eveningFeelsTemp2 {
+  grid-area: eveningFeelsTemp2;
+}
+
+.nightPressure1 {
+  grid-area: nightPressure1;
+}
+
+.nightPressure2 {
+  grid-area: nightPressure2;
+}
+
+.morningPressure1 {
+  grid-area: morningPressure1;
+}
+
+.morningPressure2 {
+  grid-area: morningPressure2;
+}
+
+.dayPressure1 {
+  grid-area: dayPressure1;
+}
+
+.dayPressure2 {
+  grid-area: dayPressure2;
+}
+
+.eveningPressure1 {
+  grid-area: eveningPressure1;
+}
+
+.eveningPressure2 {
+  grid-area: eveningPressure2;
+}
+
+.nightHumidity1 {
+  grid-area: nightHumidity1;
+}
+
+.nightHimidity2 {
+  grid-area: nightHimidity2;
+}
+
+.morningHumidity1 {
+  grid-area: morningHumidity1;
+}
+
+.morningHumidity2 {
+  grid-area: morningHumidity2;
+}
+
+.dayHumidity1 {
+  grid-area: dayHumidity1;
+}
+
+.dayHumidity2 {
+  grid-area: dayHumidity2;
+}
+
+.eveningHumidity1 {
+  grid-area: eveningHumidity1;
+}
+
+.eveningHumidity2 {
+  grid-area: eveningHumidity2;
+}
+
+.nightWind1 {
+  grid-area: nightWind1;
+}
+
+.nightWind2 {
+  grid-area: nightWind2;
+}
+
+.morningWind1 {
+  grid-area: morningWind1;
+}
+
+.morningWind2 {
+  grid-area: morningWind2;
+}
+
+.dayWind1 {
+  grid-area: dayWind1;
+}
+
+.dayWind2 {
+  grid-area: dayWind2;
+}
+
+.eveningWind1 {
+  grid-area: eveningWind1;
+}
+
+.eveningWind2 {
+  grid-area: eveningWind2;
+}

@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid $light-gray;
+  @include search-linear-gradient;
+  width: 80%;
+}
