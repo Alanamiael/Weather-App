@@ -1,8 +1,8 @@
 @import '../../styles/variables';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
-@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 .flex {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   color: $black;
   h3 {
@@ -15,5 +15,8 @@
     font-family: Inter;
     font-size: 70px;
     font-weight: 400;
+  }
+  img {
+    width: 200px;
   }
 }
