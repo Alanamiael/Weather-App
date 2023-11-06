@@ -1,10 +1,22 @@
 @import '../../styles/variables';
-.flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
+.mainTable {
   border-radius: 30px;
+  box-sizing: border-box;
   border: 1px solid $light-gray;
   @include search-linear-gradient;
-  width: 80%;
+  width: 100%;
+  padding: 30px;
+  h3 {
+    font-feature-settings: 'ss01' on;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    align-items: center;
+  }
 }
