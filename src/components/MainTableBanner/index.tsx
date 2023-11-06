@@ -1,19 +1,12 @@
-import { FC } from 'react';
+import mist from '/images/mist.png';
 import cl from './MainTableBanner.module.scss';
 
-interface MainTableBannerProps {
-  todayWeather: {
-    hour: number;
-    temp_c: number;
-    condition: { icon: string };
-  } | null;
-}
-
-const MainTableBanner: FC<MainTableBannerProps> = ({ todayWeather }) => {
+const MainTableBanner = () => {
   return (
     <div className={cl.flex}>
-      <img alt="clouds" src={todayWeather?.condition.icon} />
-      <h2>{todayWeather?.temp_c}°C</h2>
+      <h3> October, 2022 11:30</h3>
+      <img alt="clouds" src={mist} />
+      <h2>+16°C</h2>
     </div>
   );
 };
