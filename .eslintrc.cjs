@@ -34,6 +34,7 @@ module.exports = {
     'react/function-component-definition': 0,
     'import/no-absolute-path': 0,
     'no-console': 0,
+    'import/prefer-default-export': 0,
     '@typescript-eslint/no-explicit-any': 0,
     'react-hooks/exhaustive-deps': 0,
   },

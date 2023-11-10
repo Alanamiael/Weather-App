@@ -1,15 +1,16 @@
-@import '../../styles/variables';
-.flex {
-  display: flex;
-  justify-content: space-between;
+@import '../../styles/mixins';
+.container {
+  @include flex($direction: column);
+  @include border;
+  @include light-linear-gradient;
+  height: 100%;
   width: 30%;
-  align-items: center;
-  padding: 15px;
-  border-radius: 30px;
-  border: 1px solid $light-gray;
-  @include search-linear-gradient;
-  color: $black;
-  font-family: Open Sans;
-  font-size: 20px;
-  font-weight: 400;
+  padding-top: 20px;
+  h4 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+.wrapper {
+  @include flex($justify: space-between, $gap: 150px);
 }

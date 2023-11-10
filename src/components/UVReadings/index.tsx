@@ -1,14 +1,19 @@
+import { FC } from 'react';
 import cl from './UVReadings.module.scss';
+import { UVInfo } from './UVInfo';
 
-const UVReadings = () => {
+interface UVReadingsProps {
+  uv: number;
+}
+const UVReadings: FC<UVReadingsProps> = ({ uv }) => {
   return (
-    <>
-      <div className={cl.flex}>
-        <p>UV Index</p>
-        <p>4.50 UV</p>
+    <div className={cl.container}>
+      <div className={cl.wrapper}>
+        <h4>UV Index</h4>
+        <p>{uv} UV</p>
       </div>
-      <img src="" alt="" />
-    </>
+      <UVInfo uv={uv} />
+    </div>
   );
 };
 

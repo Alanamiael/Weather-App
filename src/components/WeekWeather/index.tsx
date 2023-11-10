@@ -3,18 +3,17 @@ import DayWeather from '../DayWeather';
 import cl from './WeekWeather.module.scss';
 
 interface WeekWeatherProps {
-  data: any;
+  weekWeather: any;
 }
 
-const WeekWeather: FC<WeekWeatherProps> = ({ data }) => {
+const WeekWeather: FC<WeekWeatherProps> = ({ weekWeather }) => {
   return (
-    <div className={cl.flex}>
-      <DayWeather data={data?.forecast?.forecastday[1]} />
-      <DayWeather data={data?.forecast?.forecastday[2]} />
-      <DayWeather data={data?.forecast?.forecastday[3]} />
-      <DayWeather data={data?.forecast?.forecastday[4]} />
-      <DayWeather data={data?.forecast?.forecastday[5]} />
-      <DayWeather data={data?.forecast?.forecastday[6]} />
+    <div className={cl.container}>
+      {weekWeather
+        ?.slice(1, 7)
+        .map((forecastDay: any) => (
+          <DayWeather key={forecastDay.date} data={forecastDay} />
+        ))}
     </div>
   );
 };

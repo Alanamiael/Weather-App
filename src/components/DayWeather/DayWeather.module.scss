@@ -1,24 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
-@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 @import '../../styles/variables';
+@import '../../styles/mixins';
 .dayWeather {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  @include flex($justify: flex-start, $direction: column);
+  @include light-linear-gradient;
   padding: 15px;
   border-radius: 30px;
   border: 1px solid $light-gray;
-  @include search-linear-gradient;
-  color: $black;
-  font-family: Open Sans;
 
-  h2 {
+  h4 {
     font-size: 20px;
     font-weight: 600;
     text-align: left;
   }
-  h3 {
+  span {
     font-size: 16px;
     font-weight: 400;
   }
@@ -31,24 +25,21 @@
     font-size: 24px;
     font-weight: 500;
   }
-  .maxTemp {
-    color: $black;
-  }
+
   .minTemp {
-    color: $dirty-gray;
+    color: $dark-gray;
   }
   &__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
+    @include flex($justify: space-between, $gap: 25px);
   }
 
   &__date {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    @include flex(
+      $align: flex-start,
+      $justify: flex-start,
+      $direction: column,
+      $gap: 15px
+    );
     width: 100%;
     height: 100%;
   }

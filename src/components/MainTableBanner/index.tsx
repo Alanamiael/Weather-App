@@ -11,9 +11,9 @@ interface MainTableBannerProps {
 
 const MainTableBanner: FC<MainTableBannerProps> = ({ todayWeather }) => {
   return (
-    <div className={cl.flex}>
-      <img alt="clouds" src={todayWeather?.condition.icon} />
-      <h2>{todayWeather?.temp_c}°C</h2>
+    <div className={cl.container}>
+      <img alt="clouds" src={todayWeather?.condition?.icon} />
+      <h1>{todayWeather?.temp_c}°C</h1>
     </div>
   );
 };

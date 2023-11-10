@@ -1,14 +1,20 @@
+import { FC } from 'react';
+import { HumidityInfo } from './HumidityInfo';
 import cl from './HumidityReadings.module.scss';
 
-const HumidityReadings = () => {
+interface HumidityReadingsProps {
+  humidity: number;
+}
+
+const HumidityReadings: FC<HumidityReadingsProps> = ({ humidity }) => {
   return (
-    <>
-      <div className={cl.flex}>
-        <p>Humidity</p>
-        <p>55%</p>
+    <div className={cl.container}>
+      <div className={cl.wrapper}>
+        <h4>Humidity</h4>
+        <p>{humidity}%</p>
       </div>
-      <img src="" alt="" />
-    </>
+      <HumidityInfo humidity={humidity} />
+    </div>
   );
 };
 

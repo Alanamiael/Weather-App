@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import dayjs from 'dayjs';
 import cl from './DayWeather.module.scss';
 
@@ -11,8 +10,8 @@ const DayWeather: FC<DayWeatherProps> = ({ data }) => {
   return (
     <div className={cl.dayWeather}>
       <div className={cl.dayWeather__date}>
-        <h2>{dayjs(data?.date).format('ddd')}</h2>
-        <h3>{dayjs(data?.date).format('DD MMMM')}</h3>
+        <h4>{dayjs(data?.date).format('ddd')}</h4>
+        <span>{dayjs(data?.date).format('DD MMMM')}</span>
       </div>
 
       <div className={cl.dayWeather__info}>

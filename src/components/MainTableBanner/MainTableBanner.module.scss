@@ -1,17 +1,9 @@
-@import '../../styles/variables';
+@import '../../styles/mixins';
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  color: $black;
-  h3 {
-    font-feature-settings: 'ss01' on;
-    font-family: Open Sans;
-    font-size: 24px;
-    font-weight: 400;
-  }
-  h2 {
+.container {
+  @include flex($justify: space-between, $direction: column);
+
+  h1 {
     font-family: Inter;
     font-size: 70px;
     font-weight: 400;

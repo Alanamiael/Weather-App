@@ -4,7 +4,7 @@ import cl from './MainContent.module.scss';
 
 const MainContent = ({ todayWeatherHours }: { todayWeatherHours: any }) => {
   return (
-    <div className={cl.flex}>
+    <div className={cl.container}>
       <MainTableHeadings />
       {todayWeatherHours?.map((item: unknown, index: number) => {
         if (index % 2 === 0) {

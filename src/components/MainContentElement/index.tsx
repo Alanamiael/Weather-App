@@ -6,25 +6,43 @@ interface MainContentElementProps {
   hoursWeather: any;
 }
 
+const helpers = [
+  'temp_c',
+  'feelslike_c',
+  'pressure_mb',
+  'humidity',
+  'wind_kph',
+];
 const MainContentElement: FC<MainContentElementProps> = ({ hoursWeather }) => {
+  let dayTime = '';
+  const formattedTime = dayjs(hoursWeather[0].time).format('H:mm');
+  if (formattedTime === '2:00') {
+    dayTime = 'Night';
+  } else if (formattedTime === '8:00') {
+    dayTime = 'Morning';
+  } else if (formattedTime === '14:00') {
+    dayTime = 'Day';
+  } else {
+    dayTime = 'Evening';
+  }
+
   return (
     <div className={cl.container}>
-      <h2 className={cl.title}>Night</h2>
-      <div className={cl.flex}>
+      <h2 className={cl.title}>{dayTime}</h2>
+      <div className={cl.wrapper}>
         <div className={cl.flexColumn}>
-          <p className={cl.time}>
-            {dayjs(hoursWeather[0].time).format('H:mm')}
-          </p>
+          <p className={cl.time}>{formattedTime}</p>
           <img
             src={hoursWeather[0].condition.icon}
             alt={hoursWeather[0].condition.text}
           />
+
           <div className={cl.flexColumn}>
-            <p className={cl.info}>{hoursWeather[0].temp_c}</p>
-            <p className={cl.info}>{hoursWeather[0].feelslike_c}</p>
-            <p className={cl.info}>{hoursWeather[0].pressure_mb}</p>
-            <p className={cl.info}>{hoursWeather[0].humidity}</p>
-            <p className={cl.info}>{hoursWeather[0].wind_kph}</p>
+            {helpers.map((item) => (
+              <p key={item} className={cl.info}>
+                {hoursWeather[0][item]}
+              </p>
+            ))}
           </div>
         </div>
         <div className={cl.flexColumn}>
@@ -36,11 +54,11 @@ const MainContentElement: FC<MainContentElementProps> = ({ hoursWeather }) => {
             alt={hoursWeather[1].condition.text}
           />
           <div className={cl.flexColumn}>
-            <p className={cl.info}>{hoursWeather[1].temp_c}</p>
-            <p className={cl.info}>{hoursWeather[1].feelslike_c}</p>
-            <p className={cl.info}>{hoursWeather[1].pressure_mb}</p>
-            <p className={cl.info}>{hoursWeather[1].humidity}</p>
-            <p className={cl.info}>{hoursWeather[1].wind_kph}</p>
+            {helpers.map((item) => (
+              <p key={item} className={cl.info}>
+                {hoursWeather[1][item]}
+              </p>
+            ))}
           </div>
         </div>
       </div>

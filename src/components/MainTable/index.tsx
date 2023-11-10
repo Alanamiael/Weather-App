@@ -11,10 +11,10 @@ interface MainTableProps {
 const MainTable: FC<MainTableProps> = ({ todayWeather }) => {
   return (
     <div className={cl.mainTable}>
-      <h3>{dayjs().format('DD MMMM, YYYY')}</h3>
+      <h2>{dayjs().format('DD MMMM, YYYY')}</h2>
       <div className={cl.mainTable__info}>
         <MainTableBanner todayWeather={todayWeather} />
-        <MainContent todayWeatherHours={todayWeather?.hour} />.
+        <MainContent todayWeatherHours={todayWeather?.hour} />
       </div>
     </div>
   );

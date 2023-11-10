@@ -1,40 +1,49 @@
 import { FC } from 'react';
-import axios from 'axios';
-import dayjs from 'dayjs';
+import ReactSwitch from 'react-switch';
 import cl from './Heading.module.scss';
 import searchIcon from '/icons/searchIcon.svg';
+import { DayIcon, NightIcon } from './icons';
+import { getTodayWeather } from '../../services/api-operations';
 
 interface HeadingProps {
-  setData: React.Dispatch<React.SetStateAction<undefined>>;
   location: string;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
-  url: string;
-  setTodayWeather: any;
+  toggleTheme: () => void;
+  theme: string;
+  handleSetData: ({
+    weekWeatherData,
+    todayWeatherData,
+  }: {
+    weekWeatherData: any;
+    todayWeatherData: any;
+  }) => void;
 }
 
 const Heading: FC<HeadingProps> = ({
-  setData,
   location,
   setLocation,
-  setTodayWeather,
-  url,
+  handleSetData,
+  toggleTheme,
+  theme,
 }) => {
   const searchLocation = () => {
-    axios.get(url).then((response) => {
-      setData(response.data);
-      setTodayWeather({
-        ...response.data.current,
-        hour: response.data.forecast.forecastday[0].hour.filter((item: any) =>
-          [2, 5, 8, 11, 14, 17, 20, 23].includes(+dayjs(item.time).format('H')),
-        ),
-      });
-    });
+    getTodayWeather({ location, setData: handleSetData });
   };
 
   return (
     <div className={cl.heading}>
-      <h1>{location}</h1>
-      <div className="searchInputWrapper">
+      <p>{location}</p>
+
+      <div className={cl.searchInputWrapper}>
+        <ReactSwitch
+          uncheckedIcon={DayIcon}
+          checkedIcon={NightIcon}
+          offColor="#efefef"
+          onColor="#080338"
+          onChange={toggleTheme}
+          checked={theme === 'dark'}
+          className={cl.toggle}
+        />
         <button
           type="button"
           className={cl.searchButton}
@@ -44,14 +53,13 @@ const Heading: FC<HeadingProps> = ({
         >
           <img src={searchIcon} alt="search" className={cl.searchIcon} />
         </button>
-
         <input
-          className={cl.myInput}
+          className={cl.searchInput}
           value={location}
           onChange={(event) => setLocation(event.target.value)}
           placeholder="Enter Location"
           type="text"
-        />
+        />{' '}
       </div>
     </div>
   );
