@@ -8,6 +8,7 @@ import { getTodayWeather } from '../../services/api-operations';
 interface HeadingProps {
   location: string;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
+  place: string;
   toggleTheme: () => void;
   theme: string;
   handleSetData: ({
@@ -25,6 +26,7 @@ const Heading: FC<HeadingProps> = ({
   handleSetData,
   toggleTheme,
   theme,
+  place,
 }) => {
   const searchLocation = () => {
     getTodayWeather({ location, setData: handleSetData });
@@ -32,7 +34,7 @@ const Heading: FC<HeadingProps> = ({
 
   return (
     <div className={cl.heading}>
-      <p>{location}</p>
+      <p>{place}</p>
 
       <div className={cl.searchInputWrapper}>
         <ReactSwitch

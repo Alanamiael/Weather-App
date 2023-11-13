@@ -25,6 +25,7 @@ export const getTodayWeather = async ({
     const APIData = response.data;
     const APITodayWeather = {
       ...APIData.current,
+      location: `${APIData.location.name}, ${APIData.location.country}`,
       currentTime: APIData.location.localtime,
       astro: APIData.forecast.forecastday[0].astro,
       hour: APIData.forecast.forecastday[0].hour.filter((item: any) =>

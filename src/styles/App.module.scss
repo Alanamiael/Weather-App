@@ -1,7 +1,5 @@
 @import './mixins';
 .app {
-  height: 1000px;
-
   @include flex($direction: column, $gap: 30px);
   padding: 30px;
   margin: 0 auto;

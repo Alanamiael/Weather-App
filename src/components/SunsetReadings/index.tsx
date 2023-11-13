@@ -14,81 +14,104 @@ const SunsetReadings: FC<SunsetReadingsProps> = ({
   sunset,
   currentTime,
 }) => {
-  let widthAnima = '0%';
   const time = useMemo(() => {
     if (sunset && sunrise && currentTime) {
       if (+currentTime === +sunrise[1] || +currentTime < +sunrise[1]) {
-        widthAnima = '0';
         return {
-          bottom: '-10px',
-          left: '11px',
+          sun: {
+            bottom: '-10px',
+            left: '11px',
+          },
+          backgrnd: {
+            width: '0%',
+          },
         };
       }
       if (
         +currentTime === +twentyFourFormat[+sunset[1]] ||
         +currentTime > +twentyFourFormat[+sunset[1]]
       ) {
-        widthAnima = '100%';
         return {
-          bottom: '-11px',
-          left: '218px',
+          sun: {
+            bottom: '-11px',
+            left: '218px',
+          },
+          backgrnd: {
+            width: '100%',
+          },
         };
       }
       if (+currentTime - +sunrise[1] < 6) {
-        widthAnima = '25%';
         return {
-          bottom: '40px',
-          left: '47px',
+          sun: {
+            bottom: '40px',
+            left: '47px',
+          },
+          backgrnd: {
+            width: '20%',
+          },
         };
       }
       if (+currentTime - +sunrise[1] === 6) {
-        widthAnima = '50%';
         return {
-          bottom: '63px',
-          left: '115px',
+          sun: {
+            bottom: '63px',
+            left: '115px',
+          },
+          backgrnd: {
+            width: '50%',
+          },
         };
       }
       if (+currentTime - +sunrise[1] > 6) {
-        widthAnima = '75%';
         return {
-          bottom: '47px',
-          left: '170px',
+          sun: {
+            bottom: '47px',
+            left: '170px',
+          },
+          backgrnd: {
+            width: '80%',
+          },
         };
       }
     }
 
     return {
-      bottom: '-10px',
-      left: '11px',
+      sun: {
+        bottom: '-10px',
+        left: '11px',
+      },
+      backgrnd: {
+        width: '0%',
+      },
     };
   }, [sunset, sunrise, currentTime]);
-
-  console.log(time);
 
   return (
     <div className={cl.container}>
       <h4>Sunrise and Sunset</h4>
-      <div className={cl.sunTimes}>
-        <div className={cl.sunPath}>
-          <div className={cl.sunAnimation} style={{ width: widthAnima }} />
+      <div className={cl.imgWrapper}>
+        <div className={cl.sunTimes}>
+          <div className={cl.sunPath}>
+            <div className={cl.sunAnimation} style={time.backgrnd} />
+          </div>
+          <div className={cl.sunSymbolPath}>
+            <span className={cl.symbol} style={time.sun}>
+              <img src={sunIcon} alt="sunIcon" />
+            </span>
+          </div>
         </div>
-        <div className={cl.sunSymbolPath}>
-          <span className={cl.symbol} style={time}>
-            <img src={sunIcon} alt="sunIcon" />
-          </span>
-        </div>
-      </div>
-      <div className={cl.legend}>
-        <div className={cl.sunrise}>
-          <p>Sunrise</p>
-          {sunrise}
-        </div>
+        <div className={cl.legend}>
+          <div className={cl.sunrise}>
+            <p>Sunrise</p>
+            {sunrise}
+          </div>
 
-        <div className={cl.sunset}>
-          <p>Sunset</p> {sunset}
+          <div className={cl.sunset}>
+            <p>Sunset</p> {sunset}
+          </div>
         </div>
       </div>
-      <div className={cl.clear}>&nbsp;</div>
     </div>
   );
 };

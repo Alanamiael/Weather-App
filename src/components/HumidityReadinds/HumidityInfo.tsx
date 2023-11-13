@@ -1,4 +1,7 @@
-export const humidityRange = {
+interface HumidityRangeType {
+  [index: number]: string;
+}
+const humidityRange: HumidityRangeType = {
   20: '80',
   21: '80',
   22: '80',

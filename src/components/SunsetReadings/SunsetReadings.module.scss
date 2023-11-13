@@ -3,11 +3,10 @@
 .container {
   @include border;
   @include light-linear-gradient;
-  @include flex($justify: flex-start, $direction: column);
+  @include flex($align: flex-start, $direction: column);
   width: 30%;
   height: 100%;
   max-height: 276px;
-  align-items: center;
   padding: 15px;
   p {
     color: #ffe55f;
@@ -19,6 +18,11 @@
     font-weight: 400;
     padding-bottom: 72px;
   }
+}
+
+.imgWrapper {
+  @include flex($direction: column);
+  align-self: center;
 }
 
 .sunTimes {
@@ -40,7 +44,7 @@
   .sunSymbolPath {
     color: #ffe55f;
     height: $arc-diameter;
-    left: ($arc-diameter / 2);
+    left: 110px;
     bottom: 0;
   }
   .symbol {
