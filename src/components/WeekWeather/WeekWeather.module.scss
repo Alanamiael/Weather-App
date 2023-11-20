@@ -1,0 +1,5 @@
+@import '../../styles/mixins';
+.container {
+  @include flex($justify: space-between);
+  width: 100%;
+}

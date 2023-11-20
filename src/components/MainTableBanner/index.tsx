@@ -1,12 +1,25 @@
-import mist from '/images/mist.png';
+import { FC } from 'react';
+import { TodayWeatherProps } from '../../services/interfaces';
 import cl from './MainTableBanner.module.scss';
 
-const MainTableBanner = () => {
+interface MainTableBannerProps {
+  todayWeather: TodayWeatherProps | undefined;
+}
+
+const MainTableBanner: FC<MainTableBannerProps> = ({ todayWeather }) => {
+  let todayIcon: string | string[] | undefined =
+    todayWeather?.condition?.icon.split('/');
+  if (todayIcon && todayIcon.length > 4) {
+    todayIcon[4] = '128x128';
+    todayIcon = todayIcon.join('/');
+    todayIcon.toString();
+  }
+
+  console.log(todayIcon);
   return (
-    <div className={cl.flex}>
-      <h3> October, 2022 11:30</h3>
-      <img alt="clouds" src={mist} />
-      <h2>+16°C</h2>
+    <div className={cl.container}>
+      <img alt="clouds" src={todayIcon as string} />
+      <h1>{todayWeather?.temp_c}°C</h1>
     </div>
   );
 };

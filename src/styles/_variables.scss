@@ -1,12 +1,6 @@
+$white: #fff;
 $light-gray: #4949492e;
+$dark-gray: #c0c0c0;
+$dirty-gray: #686868;
 $black: #080338;
-@mixin search-linear-gradient {
-  background: linear-gradient(
-    163deg,
-    rgba(0, 0, 0, 0.03) -1.68%,
-    rgba(255, 255, 255, 0.09) 127.54%,
-    rgba(255, 255, 255, 0.11) 127.56%,
-    rgba(255, 255, 255, 0.11) 127.57%,
-    rgba(255, 255, 255, 0.15) 127.58%
-  );
-}
+$arc-diameter: 220px;

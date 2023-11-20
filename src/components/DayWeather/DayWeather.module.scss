@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.dayWeather {
+  @include flex($justify: flex-start, $direction: column);
+  @include light-linear-gradient;
+  padding: 15px;
+  border-radius: 30px;
+  border: 1px solid $light-gray;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+  }
+  span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  img {
+    width: 75px;
+  }
+
+  p {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .minTemp {
+    color: $dark-gray;
+  }
+  &__info {
+    @include flex($justify: space-between, $gap: 25px);
+  }
+
+  &__date {
+    @include flex(
+      $align: flex-start,
+      $justify: flex-start,
+      $direction: column,
+      $gap: 15px
+    );
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+@import './mixins';
+.app {
+  @include flex($direction: column, $gap: 30px);
+  padding: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1240px;
+}
+#dark {
+  @include dark-linear-gradient;
+  color: $white;
+}
+
+#light {
+  @include light-linear-gradient;
+  color: $black;
+}
