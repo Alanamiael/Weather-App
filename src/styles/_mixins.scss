@@ -1,0 +1,35 @@
+@import './variables';
+
+@mixin border {
+  border-radius: 30px;
+  border: 1px solid $light-gray;
+}
+
+@mixin light-linear-gradient {
+  background: linear-gradient(
+    163deg,
+    rgba(0, 0, 0, 0.03) -1.68%,
+    rgba(255, 255, 255, 0.09) 127.54%,
+    rgba(255, 255, 255, 0.11) 127.56%,
+    rgba(255, 255, 255, 0.11) 127.57%,
+    rgba(255, 255, 255, 0.15) 127.58%
+  );
+}
+@mixin dark-linear-gradient {
+  background: linear-gradient(
+    163deg,
+    rgba(11, 3, 88, 0.98) -1.68%,
+    rgba(11, 3, 82, 0.91) 127.54%,
+    rgba(10, 1, 90, 0.89) 127.56%,
+    rgba(10, 2, 87, 0.91) 127.57%,
+    rgba(8, 2, 68, 0.85) 127.58%
+  );
+}
+
+@mixin flex($align: center, $justify: center, $direction: row, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}

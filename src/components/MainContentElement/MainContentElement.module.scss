@@ -1,0 +1,37 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  @include flex($justify: flex-end, $direction: column);
+
+  gap: 30px;
+  padding: 0 20px;
+  border-right: 1px solid $dark-gray;
+  font-weight: 400;
+
+  img {
+    @include flex();
+    height: 60px;
+  }
+  &:last-child {
+    border: none;
+  }
+}
+
+.wrapper {
+  @include flex($gap: 10);
+}
+.flexColumn {
+  @include flex($direction: column, $gap: 10px);
+}
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.info {
+  @include flex($gap: 15px);
+  font-size: 18px;
+  font-weight: 600;
+}

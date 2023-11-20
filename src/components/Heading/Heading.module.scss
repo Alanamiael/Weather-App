@@ -1,16 +1,62 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 @import '../../styles/variables';
+@import '../../styles/mixins';
 .heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  h1 {
-    color: $black;
+  @include flex($justify: space-between);
+  width: 100%;
+  p {
     font-feature-settings: 'ss01' on;
-    font-family: Open Sans;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
+}
+
+.searchInput {
+  @include light-linear-gradient;
+  min-width: 300px;
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 0 30px 30px 0;
+  border: 1px solid $light-gray;
+  border-left: none;
+  font-size: 18px;
+  color: $dark-gray;
+  :active {
+    border: $light-gray;
+  }
+  &:focus {
+    outline: unset;
+  }
+}
+.searchInputWrapper {
+  @include flex($align: flex-start, $justify: flex-start);
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  margin-right: 10px;
+}
+.searchButton {
+  @include light-linear-gradient;
+  position: relative;
+  min-width: 60px;
+  height: 52px;
+  padding-top: 15px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 1px solid $light-gray;
+  border-right: none;
+}
+.hoverForButton :hover {
+  cursor: pointer;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }

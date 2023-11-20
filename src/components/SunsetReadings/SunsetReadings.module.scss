@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.container {
+  @include border;
+  @include light-linear-gradient;
+  @include flex($align: flex-start, $direction: column);
+  width: 30%;
+  height: 100%;
+  max-height: 276px;
+  padding: 15px;
+  p {
+    color: #ffe55f;
+    font-size: 12px;
+    text-align: center;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 72px;
+  }
+}
+
+.imgWrapper {
+  @include flex($direction: column);
+  align-self: center;
+}
+
+.sunTimes {
+  position: relative;
+  width: 250px;
+  height: 80px;
+  border-bottom: 1px solid $dark-gray;
+  overflow-y: hidden;
+
+  .sunPath {
+    margin: 0 auto;
+    width: $arc-diameter;
+    height: $arc-diameter;
+    overflow: hidden;
+    border: 1px dashed $dark-gray;
+    border-radius: 50%;
+  }
+
+  .sunSymbolPath {
+    color: #ffe55f;
+    height: $arc-diameter;
+    left: 110px;
+    bottom: 0;
+  }
+  .symbol {
+    position: absolute;
+    bottom: -10px;
+    left: 11px;
+    transition: 0.4s;
+  }
+
+  .sunAnimation {
+    width: 30px;
+    height: 150px;
+    background-color: rgba(255, 255, 0, 0.4);
+    -webkit-transition: width 2s linear;
+    transition: width 2s linear;
+  }
+}
+
+.legend {
+  @include flex($justify: space-between, $gap: 150px);
+}

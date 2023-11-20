@@ -1,10 +1,17 @@
-@import '../../styles/variables';
-.flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 30px;
-  border: 1px solid $light-gray;
-  @include search-linear-gradient;
-  width: 80%;
+@import '../../styles/mixins';
+
+.mainTable {
+  @include border;
+  @include light-linear-gradient;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  h2 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__info {
+    @include flex($justify: space-between);
+  }
 }
